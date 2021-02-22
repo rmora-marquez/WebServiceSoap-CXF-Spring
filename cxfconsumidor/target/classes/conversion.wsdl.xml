@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://webservice.soap.mpersd.com/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="ConversionWSImpService" targetNamespace="http://webservice.soap.mpersd.com/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://webservice.soap.mpersd.com/" elementFormDefault="unqualified" targetNamespace="http://webservice.soap.mpersd.com/" version="1.0">
+
+  <xs:element name="dolarAPeso" type="tns:dolarAPeso"/>
+
+  <xs:element name="dolarAPesoResponse" type="tns:dolarAPesoResponse"/>
+
+  <xs:element name="getTipoCambio" type="tns:getTipoCambio"/>
+
+  <xs:element name="getTipoCambioResponse" type="tns:getTipoCambioResponse"/>
+
+  <xs:element name="moneda" type="tns:moneda"/>
+
+  <xs:element name="pesoADolar" type="tns:pesoADolar"/>
+
+  <xs:element name="pesoADolarResponse" type="tns:pesoADolarResponse"/>
+
+  <xs:complexType name="getTipoCambio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="getTipoCambioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:moneda"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="moneda">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombreMoneda" type="xs:string"/>
+      <xs:element minOccurs="0" name="tipoCambio" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="pesoADolar">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="pesoADolarResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dolarAPeso">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="dolarAPesoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="xs:double"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getTipoCambio">
+    <wsdl:part element="tns:getTipoCambio" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="pesoADolar">
+    <wsdl:part element="tns:pesoADolar" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="dolarAPeso">
+    <wsdl:part element="tns:dolarAPeso" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTipoCambioResponse">
+    <wsdl:part element="tns:getTipoCambioResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="pesoADolarResponse">
+    <wsdl:part element="tns:pesoADolarResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="dolarAPesoResponse">
+    <wsdl:part element="tns:dolarAPesoResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="ConversionWS">
+    <wsdl:operation name="getTipoCambio">
+      <wsdl:input message="tns:getTipoCambio" name="getTipoCambio">
+    </wsdl:input>
+      <wsdl:output message="tns:getTipoCambioResponse" name="getTipoCambioResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pesoADolar">
+      <wsdl:input message="tns:pesoADolar" name="pesoADolar">
+    </wsdl:input>
+      <wsdl:output message="tns:pesoADolarResponse" name="pesoADolarResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dolarAPeso">
+      <wsdl:input message="tns:dolarAPeso" name="dolarAPeso">
+    </wsdl:input>
+      <wsdl:output message="tns:dolarAPesoResponse" name="dolarAPesoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ConversionWSImpServiceSoapBinding" type="tns:ConversionWS">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getTipoCambio">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTipoCambio">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTipoCambioResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="pesoADolar">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="pesoADolar">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="pesoADolarResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dolarAPeso">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="dolarAPeso">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="dolarAPesoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConversionWSImpService">
+    <wsdl:port binding="tns:ConversionWSImpServiceSoapBinding" name="ConversionWSImpPort">
+      <soap:address location="http://localhost:8080/cxfproveedor/services/conversion/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
